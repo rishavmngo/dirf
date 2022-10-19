@@ -1,0 +1,76 @@
+#! /usr/bin/env python
+
+import sys,os
+
+# path = "a/b+c/d"
+
+# path = sys.argv[1][::-1]
+path = sys.argv[1]
+
+wpath = path
+dire = False
+paths = [""]
+
+
+def addSlash(arr):
+    for k in range(len(arr)):
+        arr[k] = arr[k] + '/'
+    return arr
+
+
+while(len(wpath) > 0):
+    if "/" in wpath:
+        ix = wpath.index("/")
+        dire = True
+    else:
+        ix = len(wpath) - 1
+        dire = False
+
+    if(dire):
+        inpath = wpath[:ix]
+    else:
+        inpath = wpath[:ix + 1]
+    if('+' in inpath):
+        splits = inpath.split("+")
+        if(dire):
+            splits = addSlash(splits)
+        temp = []
+        for j in splits:
+            for i in paths:
+                temp.append(i + j)
+        paths = temp
+    else:
+        splits = inpath.split("+")
+        if(dire):
+            splits = addSlash(splits)
+        temp = []
+        for j in splits:
+            for i in paths:
+                temp.append(i + j)
+        paths = temp
+
+    wpath = wpath[ix + 1:]
+
+
+# for i in range(len(paths)):
+#     print(i, " : ", paths[i])
+
+
+# path = sys.argv[1][::-1]
+print(paths)
+
+def make(paths):
+    for path in paths:
+        path = path[::-1]
+        s = path.split('/',1)
+        if(len(s) > 1):
+            os.makedirs(s[1][::-1])
+            if(len(s[0]) > 0):
+                open(path[::-1],'w')
+        else:
+            open(s[0],'w')
+
+
+make(paths)
+
+
