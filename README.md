@@ -8,21 +8,21 @@
 <img src="./screenshots/screenshot_1.png" alt="tree view of created directory">
 
 ## setup
-- Clone the file 
-- Make file executable
-- Test in the cloned repo
-- Or paste in user binary folder for global uses.
-- if `dirf` is too long for you. you can make an alias in your shell.
+- Clone the directory 
+- Make dirf file executable
+- You can test in a directory.
+- Or paste in the user binary folder for global uses.
+- If `dirf` is too long for you. You can make an alias in your shell.
 
 ## Usage
-`dirf path_to_create`
-`/`		in the end of string will crate a directory
+- `dirf path_to_create`
+- `/`		in the end of string will create a directory
 ### example
-`a/` 		will create a directory
-`b` 		will create a file.
-`a/b` 		will create a file `b` inside directory `a`.
-`a/b+c/` 	will create a directory `b` and `c` inside directory `a`
-`a/b+c` 		will create a file `b` and `c`inside directory `a`
+- `a/` 		will create a directory
+- `b` 		will create a file.
+- `a/b` 		will create a file `b` inside directory `a`.
+- `a/b+c/` 	will create a directory `b` and `c` inside directory `a`
+- `a/b+c` 		will create a file `b` and `c`inside directory `a`
 
 ## Development
 - This is the first iteration. so it may have bugs.
