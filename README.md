@@ -1,6 +1,6 @@
 # Welcome to dirf
 ## what is dirf
-- Dirf is simple command line utility to make multiple recursive directory and files inside them
+- Dirf is simple command line utility to make multiple,nested, recursive directory and files inside them
 
 `$ dirf a/b+c/d+e`
 - Here d and e are files and rest are directories.
@@ -14,7 +14,7 @@
 - Or paste in user binary folder for global uses.
 - if `dirf` is too long for you. you can make an alias in your shell.
 
-## Usages
+## Usage
 `dirf path_to_create`
 `/`		in the end of string will crate a directory
 ### example
