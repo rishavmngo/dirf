@@ -2,9 +2,7 @@
 
 import sys,os
 
-# path = "a/b+c/d"
 
-# path = sys.argv[1][::-1]
 path = sys.argv[1]
 
 wpath = path
@@ -52,24 +50,26 @@ while(len(wpath) > 0):
     wpath = wpath[ix + 1:]
 
 
-# for i in range(len(paths)):
-#     print(i, " : ", paths[i])
 
-
-# path = sys.argv[1][::-1]
-print(paths)
+path = sys.argv[1][::-1]
+# print(paths)
 
 def make(paths):
     for path in paths:
         path = path[::-1]
         s = path.split('/',1)
         if(len(s) > 1):
-            os.makedirs(s[1][::-1])
+            try:
+                os.makedirs(s[1][::-1])
+            except:
+                pass
             if(len(s[0]) > 0):
-                open(path[::-1],'w')
+                try:
+                    open(path[::-1],'w')
+                except:
+                    pass
         else:
             open(s[0],'w')
-
 
 make(paths)
 
