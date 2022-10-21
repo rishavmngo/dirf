@@ -2,7 +2,6 @@
 
 import sys,os
 
-
 path = sys.argv[1]
 
 wpath = path
@@ -51,7 +50,6 @@ while(len(wpath) > 0):
 
 
 
-path = sys.argv[1][::-1]
 # print(paths)
 
 def make(paths):
@@ -69,7 +67,7 @@ def make(paths):
                 except:
                     pass
         else:
-            open(s[0],'w')
+            open(s[0][::-1],'w')
 
 make(paths)
 
